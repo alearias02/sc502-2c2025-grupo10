@@ -1,0 +1,59 @@
+/* Fondo general y fuente */
+body {
+    background-color: #fff5f8; /* Rosa claro */
+    color: #333333; /* Gris oscuro para texto legible */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #b30059 !important; /* Fucsia fuerte */
+    font-weight: 500;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Imagen del logo */
+.logo-img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos de secciones */
+h2 {
+    color: #b30059;
+}
+
+/* Tarjetas de servicios */
+.card-title {
+    color: #2e7d32; /* Verde oscuro del logo */
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Footer */
+.footer {
+    background-color: #2d2d2d;
+    color: white;
+}
