@@ -1,0 +1,24 @@
+# Archivos del sistema
+.DS_Store
+.vscode/
+node_modules/
+.env
+*.log
+*.zip
+*.bak
+
+# Archivos de usuario y rutas globales (para evitar que Git detecte tu sistema)
+**/.Trash/
+**/.anydesk/
+**/.docker/
+**/.Oracle/
+**/.sqlcl/
+**/.sqldeveloper/
+**/db-sample-schemas*/
+**/VirtualBox VMs/
+**/Library/
+**/Pictures/
+**/Music/
+**/Movies/
+**/Downloads/
+**/Documents/
