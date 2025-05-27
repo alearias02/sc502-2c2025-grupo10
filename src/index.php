@@ -37,38 +37,71 @@
     <!-- Servicios -->
     <section id="servicios" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Nuestros Servicios</h2>
+            <h2 class="text-center mb-4">Nuestros Especialistas</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Medicina General</h5>
-                            <p class="card-text">Consultas médicas para todas las edades con atención personalizada.</p>
+                            <h5 class="card-title">Dra. Mayra Becerra Gómez</h5>
+                            <p class="card-text">Radiología e Imágenes Médicas</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Laboratorio Clínico</h5>
-                            <p class="card-text">Análisis clínicos confiables y rápidos con tecnología moderna.</p>
+                            <h5 class="card-title">Dr. Dimas Bravo Saturno</h5>
+                            <p class="card-text">Cirugía General y Proctología</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Especialidades</h5>
-                            <p class="card-text">Contamos con ginecología, pediatría, nutrición, psicología y más.</p>
+                            <h5 class="card-title">Dr. Alberto Zamora Arce</h5>
+                            <p class="card-text">Cirujano Endoscopista</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Henry Rodríguez Retana</h5>
+                            <p class="card-text">Ginecología y Obstetricia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Daniel Zumbado Campos</h5>
+                            <p class="card-text">Otorrinolaringología</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Luis Aguilar Avendaño</h5>
+                            <p class="card-text">Medicina General</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Dr. Adolfo Hernández Arias</h5>
+                                <p class="card-text">Ortopedia y Traumatología</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-5 bg-light">
+    <section id="contacto" class="py-5 bg-custom-pink">
         <div class="container">
             <h2 class="text-center mb-4">Contáctanos</h2>
             <div class="text-center mb-4">
