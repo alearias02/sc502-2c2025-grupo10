@@ -90,9 +90,16 @@
     <footer class="footer text-center py-3">
         <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
             <p class="mb-2 mb-md-0">&copy; 2025 Plaza Médica. Todos los derechos reservados.</p>
-            <a href="https://www.facebook.com/p/Centro-M%C3%A9dico-Plaza-M%C3%A9dica-61550616548520/" target="_blank" class="text-decoration-none text-primary fs-4">
-                <i class="fab fa-facebook-square fs-2"></i>
-            </a>
+            <div class="d-flex gap-3">
+                <a href="https://www.facebook.com/p/Centro-M%C3%A9dico-Plaza-M%C3%A9dica-61550616548520/"
+                    target="_blank" class="text-decoration-none text-primary fs-4">
+                    <i class="fab fa-facebook-square fs-2"></i>
+                </a>
+                <a href="https://www.instagram.com/centromedicoplazamedica/" target="_blank"
+                    class="text-decoration-none text-danger fs-4">
+                    <i class="fab fa-instagram fs-2"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
