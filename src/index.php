@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaza Médica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
@@ -14,17 +15,17 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-             
+
             <a class="navbar-brand position-absolute top-50 translate-middle-y" href="#" style="left: 1rem;">
-                <img src="../img/plazamedica_logo2.png" alt="Logo Plaza Médica" style="height: 60px;">
+                <img src="../img/plazamedica_logo3.png" alt="Logo Plaza Médica" style="height: 60px;">
             </a>
 
-             
+
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
+
             <div class="collapse navbar-collapse justify-content-end text-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
@@ -147,12 +148,45 @@
 
     <!-- Footer -->
     <footer class="footer text-center py-3">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Plaza Médica. Todos los derechos reservados.</p>
+        <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
+            <p class="mb-2 mb-md-0">&copy; 2025 Plaza Médica. Todos los derechos reservados.</p>
+            <a href="https://www.facebook.com/p/Centro-M%C3%A9dico-Plaza-M%C3%A9dica-61550616548520/" target="_blank"
+                class="text-decoration-none text-primary fs-4">
+                <i class="fab fa-facebook-square fs-2"></i>
+            </a>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <a href="https://wa.me/50688175252" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            z-index: 999;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe5b;
+        }
+    </style>
 </body>
 
 </html>
