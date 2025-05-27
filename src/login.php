@@ -12,7 +12,7 @@
         }
         .login-container {
             max-width: 400px;
-            margin: 80px auto;
+            margin: 20px auto 80px auto;
             background: white;
             padding: 30px;
             border-radius: 12px;
@@ -36,10 +36,24 @@
         .register-link:hover {
             text-decoration: underline;
         }
+        .logo-wrapper {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .logo-wrapper img {
+            max-width: 250px;
+        }
     </style>
 </head>
 <body>
 
+     
+    <div class="logo-wrapper">
+        <img src="../img/plazamedica_logo2.png" alt="Logo Plaza Médica">
+    </div>
+
+     
     <div class="login-container">
         <h3 class="text-center login-title">Iniciar Sesión</h3>
         <form action="procesar_login.php" method="POST">

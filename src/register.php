@@ -10,9 +10,17 @@
         body {
             background-color: #fff5f8;
         }
+        .logo-wrapper {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .logo-wrapper img {
+            max-width: 250px;
+        }
         .register-container {
             max-width: 500px;
-            margin: 60px auto;
+            margin: 0 auto 60px auto;
             background: white;
             padding: 30px;
             border-radius: 12px;
@@ -40,6 +48,12 @@
 </head>
 <body>
 
+     
+    <div class="logo-wrapper">
+        <img src="../img/plazamedica_logo2.png" alt="Logo Plaza Médica">
+    </div>
+
+    <!-- Formulario -->
     <div class="register-container">
         <h3 class="text-center register-title">Crear Cuenta</h3>
         <form action="procesar_registro.php" method="POST">

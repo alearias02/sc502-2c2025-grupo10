@@ -61,3 +61,9 @@ h2 {
 .bg-custom-pink {
     background-color: #fff5f8 !important; 
 }
+
+.navbar {
+    min-height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
