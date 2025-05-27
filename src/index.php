@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Especialistas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                 </ul>
@@ -63,6 +63,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
@@ -87,17 +88,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Adolfo Hernández Arias</h5>
-                                <p class="card-text">Ortopedia y Traumatología</p>
-                            </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Adolfo Hernández Arias</h5>
+                            <p class="card-text">Ortopedia y Traumatología</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dra. Laura Castro Jiménez</h5>
+                            <p class="card-text">Dermatología Clínica</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Esteban Vega Morales</h5>
+                            <p class="card-text">Psiquiatría y Salud Mental</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Contacto -->
