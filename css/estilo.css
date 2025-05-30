@@ -84,3 +84,6 @@ h2 {
     transform: scale(1.1);
 }
 
+.navbar, .navbar a, .navbar-brand {
+    font-family: 'Poppins', sans-serif !important;
+}

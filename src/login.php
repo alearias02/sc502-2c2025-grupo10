@@ -1,3 +1,5 @@
+<?php require_once('inicio_sesion.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,6 +58,11 @@
      
     <div class="login-container">
         <h3 class="text-center login-title">Iniciar Sesión</h3>
+        <?php if (isset($_GET['error'])): ?>
+    <div class="alert alert-danger text-center">
+        Usuario o contraseña incorrectos.
+    </div>
+<?php endif; ?>
         <form action="procesar_login.php" method="POST">
             <div class="mb-3">
                 <label for="usuario" class="form-label">Usuario o Correo</label>
@@ -75,5 +82,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("error")) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuario o contraseña incorrectos.',
+            confirmButtonColor: '#b30059'
+        });
+    }
+</script>
 </body>
 </html>

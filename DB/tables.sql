@@ -9,4 +9,22 @@ CREATE TABLE IF NOT EXISTS usuarios (
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-SELECT * FROM usuarios;
+
+CREATE TABLE especialistas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    especialidad VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE citas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_especialista INT NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    motivo TEXT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_especialista) REFERENCES especialistas(id)
+);
+

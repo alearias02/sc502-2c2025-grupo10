@@ -1,11 +1,11 @@
 <?php
-$host = '127.0.0.1'; // Usa la IP en lugar de 'localhost'
+$host = '127.0.0.1'; 
 $db   = 'plazamedica_db';
 $user = 'root';
 $pass = 'plaza123';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset"; // Agrega el puerto
+$dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset"; 
 
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,   

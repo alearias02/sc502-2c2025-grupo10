@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/conexion.php'); // Ajusta el path si está en otro lado
+require_once(__DIR__ . '/conexion.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $cedula = $_POST['cedula'];
