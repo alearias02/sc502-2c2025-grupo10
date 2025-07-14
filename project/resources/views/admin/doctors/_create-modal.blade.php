@@ -2,7 +2,7 @@
 <div class="modal fade" id="createDoctorModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <form method="POST" action="{{ route('admin.doctors.store') }}" enctype="multipart/form-data">
+     <form id="createDoctorForm" enctype="multipart/form-data">
         @csrf
         <div class="modal-header">
           <h5 class="modal-title">Agregar Doctor</h5>

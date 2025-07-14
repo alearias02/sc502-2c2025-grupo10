@@ -67,6 +67,41 @@
 
 @push('scripts')
 <script>
+  const createForm = document.getElementById('createDoctorForm');
+    createForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(createForm);
+      try {
+        const { data } = await axios.post('/doctors', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        //actualizar la tabla en pantallas sin recargar
+        location.reload(); // o insertar la nueva fila dinámicamente
+      } catch(err) {
+      console.error('Error completo:', err);
+
+      if (err.response) {
+        console.error('Response data:', err.response.data);
+        console.error('Response status:', err.response.status);
+        console.error('Response headers:', err.response.headers);
+
+        if (err.response.status === 422) {
+          // Mostrar errores de validación
+          const errors = err.response.data.errors;
+          let mensajes = [];
+          Object.values(errors).forEach(arr => mensajes.push(...arr));
+          alert('Errores de validación:\n' + mensajes.join('\n'));
+          return;
+        }
+
+        alert(`Error ${err.response.status}: ${JSON.stringify(err.response.data)}`);
+        return;
+      }
+
+      alert('Error de red o servidor: ' + err.message);
+    }
+    });
+
   // Edit modal: llenar campos
   var editModal = document.getElementById('editDoctorModal');
   editModal.addEventListener('show.bs.modal', function (e) {

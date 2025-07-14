@@ -1,104 +1,150 @@
+# SC502-2C2025-GRU10 - Documentación del Proyecto
 
-Este repositorio contiene dos carpetas:
+Este repositorio contiene dos directorios:
 
-legacy/: Código monolítico PHP original (no tocar).
+* **legacy/**: Código monolítico PHP original.
+* **project/**: Nuevo backend desarrollado con Laravel, siguiendo una arquitectura API-first.
 
-project/: Nuevo backend Laravel (API-first).
+---
 
-📂 Estructura
+## 📂 Estructura del Proyecto
+
+```
 SC502-2C2025-GRU10/
-├── legacy/ # Código viejo (monolito PHP)
-└── project/ # Nuevo Laravel API
+├── legacy/           # Código antiguo (monolito PHP)
+└── project/          # Nuevo Laravel API
     ├── app/
     ├── config/
     ├── database/
-    │ ├── migrations/
-    │ └── seeders/
+    │   ├── migrations/
+    │   └── seeders/
     ├── public/
     ├── resources/
     ├── routes/
     ├── storage/
     ├── tests/
     ├── vendor/
-    ├── composer.json
-└── README.md
+    └── composer.json
+└── README.md         # Documentación y guía de instalación
+```
 
-Prerrequisitos
-macOS / Linux
-PHP 8.0+
+---
 
-Composer
+## 📋 Prerrequisitos
 
-MySQL (MAMP, Homebrew, sistema nativo)
+* **PHP 8.0+**
+* **Composer**
+* **MySQL** (MAMP o XAMPP)
 
-Windows
-PHP 8.0+ (XAMPP)
+---
 
-Composer (instalador oficial)
+## ⚙️ Instalación del Backend (Laravel)
 
-MySQL (incluido en XAMPP)
+1. **Moverse al directorio** `/project`:
 
-Instalación (macOS, Linux y Windows)
-Ejecuta estos comandos dentro de /project
+   ```bash
+   cd project
+   ```
 
-Instalar dependencias:
-composer install
+2. **Instalar dependencias**:
 
-Generar la clave de aplicación:
-php artisan key:generate
+   ```bash
+   composer install
+   ```
 
-Configurar base de datos
-En project/.env, ajustar:
+3. **Generar clave de aplicación**:
 
-DB_CONNECTION=mysql  
-DB_HOST=127.0.0.1  
-DB_PORT=3306       # O 8889 en MAMP  
-DB_DATABASE=proyecto_awcs  
-DB_USERNAME=root  
-DB_PASSWORD=root     
-Crear la base de datos vacía proyecto_awcs 
+   ```bash
+   php artisan key:generate
+   ```
 
-Migraciones y datos de ejemplo
+4. **Instalar scaffolding de API (Laravel Sanctum)**:
 
-php artisan migrate  
-php artisan db:seed    # opcional, si tienes seeders  
+   ```bash
+   php artisan install:api
+   ```
 
-⚙️ Levantar servidor
-Opción A: Artisan 
-php artisan serve  
-# -> http://127.0.0.1:8000  
+5. **Copiar archivo de entorno**:
 
-Opción B: MAMP / XAMPP 
-Apuntar el DocumentRoot a:
-/ruta/a/SC502-2C2025-GRU10/project/public
+   ```bash
+   cp .env.example .env
+   ```
 
-Accede con el host configurado
+6. **Configurar la base de datos** en `.env`:
 
-📑 Uso de la API
-Todas las rutas JSON deberan estar en project/routes/api.php, por ejemplo:
+   ```ini
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306        # O 8889 si usas MAMP
+   DB_DATABASE=proyecto_awcs
+   DB_USERNAME=root
+   DB_PASSWORD=root
+   ```
 
-POST /api/login
+7. **Crear base de datos vacía** `proyecto_awcs` en MySQL.
 
-POST /api/register
+8. **Ejecutar migraciones**:
 
-GET /api/specialists
+   ```bash
+   php artisan migrate
+   ```
 
-POST /api/appointments
+9. **Publicar recursos de Sanctum** (si no se hizo con el install):
 
-Las peticiones y respuestas usan JSON.
+   ```bash
+   php artisan vendor:publish --provider="Laravel\\Sanctum\\SanctumServiceProvider"
+   ```
 
-Añadir migraciones en database/migrations, por ejemplo:
-# Para una tabla “specialties”:
-php artisan make:migration create_specialties_table --create=specialties
-En el archivo creado database/migrations/ , dentro del up(), definir las columnas de la tabla, por ejemplo:
-Schema::create('specialties', function (Blueprint $table) {
-    $table->id();
-    $table->string('name', 100)->unique();
-    $table->text('description')->nullable();
-    $table->timestamps();
-});
+---
 
-ejecutar la migracion: 
-php artisan migrate
+## 🚀 Levantar el servidor
 
-por ejemplo en mysql workbench se deberan ver las tablas creadas en la db 
+* **Opción A: Artisan**
+
+  ```bash
+  php artisan serve
+  ```
+
+  Se accederá en: `http://127.0.0.1:8000`.
+
+* **Opción B: MAMP/XAMPP**
+
+  Configurar DocumentRoot al directorio `project/public`.
+
+---
+
+## 📑 Uso de la API
+
+Todas las rutas RESTful se definen en `project/routes/api.php` y usan el middleware de Sanctum, ejemplo:
+
+* **Listar doctores**: `GET  /api/doctors`
+* **Crear doctor**:  `POST /api/doctors`
+* **Actualizar**:     `PUT  /api/doctors/{id}`
+* **Eliminar**:       `DELETE /api/doctors/{id}`
+
+---
+
+## ✍️ Guía para nuevas migraciones
+
+1. **Crear migración**:
+
+   ```bash
+   php artisan make:migration create_<tabla>_table --create=<tabla>
+   ```
+
+2. **Definir columnas** en `database/migrations/...`:
+
+   ```php
+   Schema::create('<tabla>', function (Blueprint $table) {
+       $table->id();
+       $table->string('name',100)->unique();
+       $table->text('description')->nullable();
+       $table->timestamps();
+   });
+   ```
+
+3. **Ejecutar migraciones**:
+
+   ```bash
+   php artisan migrate
+   ```

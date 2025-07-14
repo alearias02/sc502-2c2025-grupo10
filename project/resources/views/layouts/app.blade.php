@@ -128,6 +128,10 @@
     });
   </script>
   <script src="{{ asset('js/app.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+  axios.defaults.baseURL = '/api';
+</script>
   @stack('scripts')
 </body>
 </html>
