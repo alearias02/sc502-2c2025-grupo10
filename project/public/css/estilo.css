@@ -1,0 +1,89 @@
+ 
+body {
+    background-color: #fff5f8;  
+    color: #333333;  
+    font-family: 'Segoe UI', sans-serif;
+}
+
+ 
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #b30059 !important;  
+    font-weight: 500;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ 
+.logo-img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+ 
+h2 {
+    color: #b30059;
+}
+
+ 
+.card-title {
+    color: #2e7d32; 
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Footer */
+.footer {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.bg-custom-pink {
+    background-color: #fff5f8 !important; 
+}
+
+.navbar {
+    min-height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    border-radius: 50%;
+    background-color: #25d366;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.navbar, .navbar a, .navbar-brand {
+    font-family: 'Poppins', sans-serif !important;
+}
