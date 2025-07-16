@@ -5,6 +5,16 @@ Este repositorio contiene dos directorios:
 * **legacy/**: Código monolítico PHP original.
 * **project/**: Nuevo backend desarrollado con Laravel, siguiendo una arquitectura API-first.
 
+La idea es utilizar API-first para el backend con Laravel, apoyado en Blade como motor de plantillas para las vistas y Axios para consumir la API desde el frontend. Este esquema permite:
+
+Separación clara entre lógica de negocio y presentación.
+
+Endpoints RESTful seguros protegidos con Laravel Sanctum.
+
+Vistas iniciales generadas con Blade, manteniendo la facilidad de uso de plantillas de Laravel.
+
+Interacciones dinámicas (CRUD, carga asíncrona de datos) gestionadas con Axios.
+
 ---
 
 ## 📂 Estructura del Proyecto
@@ -120,7 +130,7 @@ Todas las rutas RESTful se definen en `project/routes/api.php` y usan el middlew
 * **Listar doctores**: `GET  /api/doctors`
 * **Crear doctor**:  `POST /api/doctors`
 * **Actualizar**:     `PUT  /api/doctors/{id}`
-* **Eliminar**:       `DELETE /api/doctors/{id}`
+* **Eliminar**:       `DELETE /api/doctors/{id}` 
 
 ---
 

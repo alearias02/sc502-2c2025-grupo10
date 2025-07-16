@@ -35,14 +35,16 @@
             data-bs-toggle="modal"
             data-bs-target="#editDoctorModal"
             data-id="{{ $doctor->id }}"
-            data-first_name="{{ $doctor->first_name }}"
-            data-last_name="{{ $doctor->last_name }}"
+            data-first-name="{{ $doctor->first_name }}"
+            data-last-name="{{ $doctor->last_name }}"
             data-email="{{ $doctor->email }}"
             data-phone="{{ $doctor->phone }}"
-            data-license_number="{{ $doctor->license_number }}"
+            data-license-number="{{ $doctor->license_number }}"
             data-bio="{{ $doctor->bio }}"
-            data-specialty_ids="{{ $doctor->specialties->pluck('id')->join(',') }}"
-          ><i class="fas fa-pencil-alt"></i></button>
+            data-specialty-ids="{{ $doctor->specialties->pluck('id')->join(',') }}"
+          >
+            <i class="fas fa-pencil-alt"></i>
+          </button>
           <button
             class="btn btn-sm btn-danger"
             data-bs-toggle="modal"
@@ -66,71 +68,8 @@
 @endsection
 
 @push('scripts')
-<script>
-  const createForm = document.getElementById('createDoctorForm');
-    createForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const formData = new FormData(createForm);
-      try {
-        const { data } = await axios.post('/doctors', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        //actualizar la tabla en pantallas sin recargar
-        location.reload(); // o insertar la nueva fila dinámicamente
-      } catch(err) {
-      console.error('Error completo:', err);
-
-      if (err.response) {
-        console.error('Response data:', err.response.data);
-        console.error('Response status:', err.response.status);
-        console.error('Response headers:', err.response.headers);
-
-        if (err.response.status === 422) {
-          // Mostrar errores de validación
-          const errors = err.response.data.errors;
-          let mensajes = [];
-          Object.values(errors).forEach(arr => mensajes.push(...arr));
-          alert('Errores de validación:\n' + mensajes.join('\n'));
-          return;
-        }
-
-        alert(`Error ${err.response.status}: ${JSON.stringify(err.response.data)}`);
-        return;
-      }
-
-      alert('Error de red o servidor: ' + err.message);
-    }
-    });
-
-  // Edit modal: llenar campos
-  var editModal = document.getElementById('editDoctorModal');
-  editModal.addEventListener('show.bs.modal', function (e) {
-    var btn = e.relatedTarget;
-    var id = btn.dataset.id;
-    var form = document.getElementById('editDoctorForm');
-    form.action = '/admin/doctors/' + id;
-
-    document.getElementById('edit_first_name').value = btn.dataset.first_name;
-    document.getElementById('edit_last_name').value  = btn.dataset.last_name;
-    document.getElementById('edit_email').value      = btn.dataset.email;
-    document.getElementById('edit_phone').value      = btn.dataset.phone;
-    document.getElementById('edit_license_number').value = btn.dataset.license_number;
-    document.getElementById('edit_bio').value        = btn.dataset.bio;
-
-    var ids = btn.dataset.specialty_ids.split(',');
-    var select = document.getElementById('edit_specialty_ids');
-    Array.from(select.options).forEach(opt => {
-      opt.selected = ids.includes(opt.value);
-    });
-  });
-
-  // Delete modal: ajustar acción
-  var deleteModal = document.getElementById('deleteDoctorModal');
-  deleteModal.addEventListener('show.bs.modal', function (e) {
-    var btn = e.relatedTarget;
-    var id = btn.dataset.id;
-    var form = document.getElementById('deleteDoctorForm');
-    form.action = '/admin/doctors/' + id;
-  });
-</script>
+<!-- Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Tu JS de doctores -->
+<script src="{{ asset('js/doctors.js') }}"></script>
 @endpush
