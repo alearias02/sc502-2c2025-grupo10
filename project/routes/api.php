@@ -9,3 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('doctors', DoctorApiController::class);
+
+use App\Http\Controllers\Api\AppointmentApiController;
+
+Route::apiResource('appointments', AppointmentApiController::class);

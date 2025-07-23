@@ -83,6 +83,7 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Administración</a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="{{ route('admin.doctors.index') }}">Doctores</a></li>
+              <li><a class="dropdown-item" href="{{ route('admin.appointments.index') }}">Citas</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -121,6 +122,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
     AOS.init({
       once: true,

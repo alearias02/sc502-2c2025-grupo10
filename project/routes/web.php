@@ -23,9 +23,6 @@ Route::post('/logout', [LogoutController::class,'logout'])->name('logout');
 // Perfil
 Route::get('/profile', [ProfileController::class,'index'])->name('profile');
 
-// Crear cita
-Route::get('/appointments/create', [AppointmentController::class,'create'])
-     ->name('appointments.create');
 */
 
 // Admin Doctors
@@ -34,5 +31,9 @@ Route::prefix('admin')
      // ->middleware('auth')    // comentado hasta implementar Auth
      ->group(function(){
     Route::resource('doctors', DoctorController::class)->except(['show']);
+    Route::resource('appointments', AppointmentController::class)->except('show');
 });
+
+
+
 

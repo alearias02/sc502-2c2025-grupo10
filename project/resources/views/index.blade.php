@@ -14,23 +14,24 @@
   <div class="container">
     <h2 class="text-center mb-5" data-aos="zoom-in">Nuestros Especialistas</h2>
     <div class="row g-4">
-      @foreach($especialistas as $especialista)
-        <div
-          class="col-md-4"
-          data-aos="fade-up"
-          data-aos-delay="{{ $loop->index * 100 }}"
-        >
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">{{ $especialista['nombre'] }}</h5>
-              <p class="card-text">{{ $especialista['especialidad'] }}</p>
-            </div>
+      @foreach($doctors as $doc)
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-success">
+              {{ $doc->first_name }} {{ $doc->last_name }}
+            </h5>
+            <p class="card-text">
+              {{ $doc->specialties->pluck('name')->join(', ') }}
+            </p>
           </div>
         </div>
+      </div>
       @endforeach
     </div>
   </div>
 </section>
+
 
   <!-- Contacto -->
   <section id="contacto" class="py-5 bg-custom-pink">
