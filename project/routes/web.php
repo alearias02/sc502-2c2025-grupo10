@@ -32,6 +32,7 @@ Route::prefix('admin')
      ->group(function(){
     Route::resource('doctors', DoctorController::class)->except(['show']);
     Route::resource('appointments', AppointmentController::class)->except('show');
+    Route::view('/login', 'login')->name('login');
 });
 
 
