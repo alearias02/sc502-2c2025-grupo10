@@ -24,15 +24,16 @@ Route::post('/logout', [LogoutController::class,'logout'])->name('logout');
 Route::get('/profile', [ProfileController::class,'index'])->name('profile');
 
 */
+//Login
+Route::view('/login', 'auth.login')->name('login');
 
-// Admin Doctors
+//Admin
 Route::prefix('admin')
      ->name('admin.')
      // ->middleware('auth')    // comentado hasta implementar Auth
      ->group(function(){
     Route::resource('doctors', DoctorController::class)->except(['show']);
     Route::resource('appointments', AppointmentController::class)->except('show');
-    Route::view('/login', 'login')->name('login');
 });
 
 
